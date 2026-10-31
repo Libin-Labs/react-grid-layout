@@ -1,0 +1,41 @@
+.lp-grid-layout {
+  box-sizing: border-box;
+  contain: layout style;
+}
+
+.lp-grid-layout__item {
+  min-width: 0;
+  min-height: 0;
+  outline-offset: 2px;
+  user-select: none;
+}
+
+.lp-grid-layout__item:focus-visible,
+.lp-grid-layout__resize-handle:focus-visible {
+  outline: 2px solid var(--lp-grid-focus-color, #2563eb);
+}
+
+.lp-grid-layout__item[aria-roledescription='grid item'] {
+  cursor: grab;
+}
+
+.lp-grid-layout__item[aria-roledescription='grid item']:active {
+  cursor: grabbing;
+}
+
+.lp-grid-layout__resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--lp-grid-resize-handle-size, 18px);
+  height: var(--lp-grid-resize-handle-size, 18px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(135deg, transparent 48%, currentColor 49% 55%, transparent 56%),
+    linear-gradient(135deg, transparent 65%, currentColor 66% 72%, transparent 73%);
+  color: var(--lp-grid-resize-color, #64748b);
+  cursor: nwse-resize;
+  touch-action: none;
+}
